@@ -1,0 +1,4 @@
+gcmAPI : 383627658373
+
+{"publicKey":"BI6IAqUdSCshe0G3fj5ewbCp-qc8nM7eSN0FHQ9XeWXhSiemdi5IUvuHNxat1GXXSYQVfQXQouk_4yZPJC1k-jU",
+"privateKey":"h58Vptz8Ar_wK420CPamLFlq2HGqXeruSuq0-u6ISVE"}
