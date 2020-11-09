@@ -39,22 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var page = window.location.hash.substr(1);
     if (page == "") page = "index";
     loadPage(page);
-    
-    // function loadHomeCourse() {
-    //   document.querySelectorAll(".card-action a").forEach(function(elm) {
-    //     elm.addEventListener("click", function(event) {
-    //       // Tutup sidenav
-    //       var sidenav = document.querySelector(".sidenav");
-    //       M.Sidenav.getInstance(sidenav).close();
- 
-    //       // Muat konten halaman yang dipanggil
-    //       page = event.target.getAttribute("href").substr(1);
-    //       loadPage(page);
-    //       window.scrollTo({ top: 0 });
-    //     });
-    //   });
-    // }
-
 
     function loadPage(page) {
       var xhttp = new XMLHttpRequest();
