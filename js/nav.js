@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load page content
     var page = window.location.hash.substr(1);
-    if (page == "") page = "home";
+    if (page == "") page = "index";
     loadPage(page);
     
     // function loadHomeCourse() {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
           }
       };
-      xhttp.open("GET", "/pages/" + page + ".html", true);
+      xhttp.open("GET" + page + ".html", true);
       xhttp.send();
     }
   });
