@@ -13,11 +13,8 @@ var urlsToCache = [
   "/images/icons/icon-512x512.png",
   "/images/header-img2.png",
   "/images/logo-2.png",
-  "/images/Overfootball.png",
-  "/images/Overfootball-1.png",
   "/images/schedule.jpg",
   "/images/standings.jpg",
-  "/images/teams.jpg",
   "/images/laliga.png",
   "/images/klasemenn.jpg",
   "/images/liga1.png",
@@ -31,12 +28,8 @@ var urlsToCache = [
   "/detailteam.html",
   "/pages/saved.html",
   '/css/style.css',
-  // '/css/apercu.css',
   "/css/materialize.min.css",
   "/css/materialize.css",
-  // "/fonts/Apercu_Bold.otf",
-  // "/fonts/Apercu_Light.otf",
-  // "/fonts/Apercu_Regular.otf",
   "/js/materialize.js",
   "/js/materialize.min.js",
   "/js/idb.js",
@@ -73,7 +66,7 @@ self.addEventListener('activate', function(event){
 
 
 self.addEventListener("fetch", function(event) {
-  var base_url = "https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/";
+  var base_url = "https://api.football-data.org/v2/";
   if (event.request.url.indexOf(base_url) > -1) {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
