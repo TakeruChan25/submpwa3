@@ -44,7 +44,7 @@ function getStandings() {
                 `;
                 
           });
-          document.getElementById("epl-standings-body").innerHTML = tblRow;
+          document.getElementById("esp-standings-body").innerHTML = tblRow;
         })
       }
     })
@@ -76,7 +76,7 @@ function getStandings() {
                 `;
       });
       
-      document.getElementById("epl-standings-body").innerHTML = tblRow;
+      document.getElementById("esp-standings-body").innerHTML = tblRow;
       
     })
     .catch(function(error) {
