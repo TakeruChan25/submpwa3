@@ -9,19 +9,19 @@ document.addEventListener("DOMContentLoaded", function() {
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4) {
             if (this.status != 200) return;
-       
+      
             // Muat daftar tautan menu
             document.querySelectorAll(".topnav, .sidenav").forEach(function(elm) {
               elm.innerHTML = xhttp.responseText;
             });
-       
+      
             // Daftarkan event listener untuk setiap tautan menu
             document.querySelectorAll(".sidenav a, .topnav a, .footer-links li a").forEach(function(elm) {
               elm.addEventListener("click", function(event) {
                 // Tutup sidenav
                 var sidenav = document.querySelector(".sidenav");
                 M.Sidenav.getInstance(sidenav).close();
-       
+      
                 // Muat konten halaman yang dipanggil
                 page = event.target.getAttribute("href").substr(1);
                 
@@ -37,21 +37,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load page content
     var page = window.location.hash.substr(1);
-    if (page == "") page = "index";
+    if (page === '' ) page = "home";
     loadPage(page);
-
+    
     function loadPage(page) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
           if (this.readyState == 4) {
-              const content = document.querySelector("#body-content");
-              if (page === "index") {
-                getTeams();
-              } else if (page === "saved") {
-                getSavedSchedule();
-              }
+            var content = document.querySelector(".body-content");
 
-            // var content = document.querySelector(".body-content");
+          if (page === "saved") {
+          getSavedTeams();
+          getSavedSchedule();
+        }
+        else if (page === "klasemen") {
+          getStandings();
+        }
+        else if (page === "team") {
+          getTeams();
+          getTeamById();
+
+        }
+        else if (page === "jadwal") {
+          getMatches();
+        }
+            
             if (this.status == 200) {
                 content.innerHTML = xhttp.responseText;
                 
@@ -66,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
           }
       };
-      xhttp.open("GET" + page + ".html", true);
+      xhttp.open("GET", "/pages/" + page + ".html", true);
       xhttp.send();
     }
   });

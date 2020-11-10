@@ -1,4 +1,4 @@
-var dbPromised = idb.open("overfootball", 2, function(upgradeDb) {
+var dbPromised = idb.open("onestopfootball", 2, function(upgradeDb) {
   var teamsObjectStore = upgradeDb.createObjectStore("fav_teams", {
     keyPath: "id"
   });
