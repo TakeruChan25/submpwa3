@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 else if (page === "team") {
                   getTeams();
-                  getTeamById();
+                  // getTeamById();
                 }
                 else if (page === "jadwal") {
                   getMatches();
