@@ -25,6 +25,7 @@ header .header-logo {
 header .img {
   position: relative;
   height: 300px;
+  width: 100%;
 }
 
 header .img > div {

@@ -1,3 +1,5 @@
+const { ClientRequest } = require("http");
+
 const CACHE_NAME = "submpwa2";
 var urlsToCache = [
   "/",
@@ -49,6 +51,7 @@ self.addEventListener('install', function(event){
 })
 
 self.addEventListener('activate', function(event){
+  clients.claim();
 	event.waitUntil(
 		caches.keys()
 		.then(function(cacheNames) {
@@ -67,7 +70,9 @@ self.addEventListener('activate', function(event){
 
 self.addEventListener("fetch", function(event) {
   var base_url = "https://api.football-data.org/v2/";
-  if (event.request.url.indexOf(base_url) > -1) {
+  const online = navigator.onLine;
+
+  if (event.request.url.indexOf(base_url) > -1 && online) {
     event.respondWith(
       caches.open(CACHE_NAME).then(function(cache) {
         return fetch(event.request).then(function(response) {
