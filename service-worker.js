@@ -1,5 +1,3 @@
-const { ClientRequest } = require("http");
-
 const CACHE_NAME = "submpwa2";
 var urlsToCache = [
   "/",
