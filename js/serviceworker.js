@@ -28,6 +28,7 @@
             return;
           }
           
+          navigator.serviceWorker.ready.then(() => {
           if (('PushManager' in window)) {
             navigator.serviceWorker.getRegistration().then(function(registration) {
                 registration.pushManager.subscribe({
@@ -43,7 +44,8 @@
                     console.error('Tidak dapat melakukan subscribe ', e.message);
                 });
             });
-          }
+            }
+          });
         });
       }
     }
