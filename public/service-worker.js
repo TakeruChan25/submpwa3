@@ -6,8 +6,8 @@ if (workbox)
 else
   console.log(`Workbox gagal dimuat`);
 
-workbox.core.skipWaiting();
-workbox.core.clientsClaim();
+// workbox.core.skipWaiting();
+// workbox.core.clientsClaim();
 
 workbox.precaching.precacheAndRoute([
   { url: "/", revision: "1" },
@@ -19,7 +19,7 @@ workbox.precaching.precacheAndRoute([
   { url: "/css/materialize.min.css", revision: "1" },
   { url: "/css/style.css", revision: "1" },
 ], {
-ignoreURLParametersMatching: [/. */]
+ignoreUrlParametersMatching: [/. */]
 });
 
 //js file
