@@ -23,12 +23,6 @@ workbox.routing.registerRoute(
   new RegExp("/js/"),
   new workbox.strategies.CacheFirst({
     cacheName: "js",
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        // cache 1/2 bulan
-        maxAgeSeconds: 60 * 60 * 24 * 15,
-      }),
-    ],
   })
 );
 
@@ -37,12 +31,6 @@ workbox.routing.registerRoute(
   new RegExp("/images/"),
   new workbox.strategies.CacheFirst({
     cacheName: "images",
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        // cache sebulan
-        maxAgeSeconds: 60 * 60 * 24 * 30,
-      }),
-    ],
   })
 );
 
@@ -59,14 +47,6 @@ workbox.routing.registerRoute(
   /^https:\/\/api\.football-data\.org/,
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: "football-data",
-    plugins: [
-      new workbox.cacheableResponse.CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 30,
-      }),
-    ],
   })
 );
 
