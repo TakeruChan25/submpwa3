@@ -15,7 +15,6 @@ workbox.precaching.precacheAndRoute([
   { url: "/favicon.ico", revision: "1" },
   { url: "/index.html", revision: "1" },
   { url: "/detailteam.html", revision: "1" },
-  { url: "/push.js", revision: "1" },
   { url: "/nav.html", revision: "1" },
   { url: "/css/materialize.min.css", revision: "1" },
   { url: "/css/style.css", revision: "1" },
